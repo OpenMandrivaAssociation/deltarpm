@@ -1,6 +1,6 @@
 %define name	deltarpm
 %define version	3.3
-%define release	%mkrel 3
+%define release	%mkrel 4
 %define rpmdir	%{_prefix}/lib/rpm
 
 Summary:	Tools to create and apply deltarpms
@@ -29,7 +29,7 @@ Starting from version 2.2, there are also tools to handle ISO diffs.
 %patch0 -p1 -b .mandir
 
 %build
-%make prefix="%{_prefix}" rpmdumpheader="%{rpmdir}/rpmdumpheader"
+%make prefix="%{_prefix}" rpmdumpheader="%{rpmdir}/rpmdumpheader" CFLAGS="%optflags -I%_includedir/rpm"
 
 %install
 rm -rf $RPM_BUILD_ROOT
