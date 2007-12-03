@@ -1,6 +1,6 @@
 %define name	deltarpm
-%define version	3.3
-%define release	%mkrel 4
+%define version	3.4
+%define release	%mkrel 1
 %define rpmdir	%{_prefix}/lib/rpm
 
 Summary:	Tools to create and apply deltarpms
@@ -42,15 +42,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc README LICENSE.BSD
+%doc README NEWS
 %{_bindir}/makedelta*
 %{_bindir}/applydelta*
 %{_bindir}/drpmsync
+%{_bindir}/fragiso
 %{_bindir}/combinedeltarpm
 %{_mandir}/man8/makedelta*.8*
 %{_mandir}/man8/applydelta*.8*
 %{_mandir}/man8/drpmsync.8*
 %{_mandir}/man8/combinedeltarpm.8*
 %{rpmdir}/rpmdumpheader
-
-
