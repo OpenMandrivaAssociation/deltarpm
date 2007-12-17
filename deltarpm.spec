@@ -13,7 +13,6 @@ URL: http://www.novell.com/products/linuxpackages/suselinux/deltarpm.html
 License:	BSD
 Group:		System/Configuration/Packaging
 BuildRequires:	rpm-devel, popt-devel, zlib-devel, bzip2-devel
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This package contains tools to create and apply deltarpms. A deltarpm
