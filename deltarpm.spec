@@ -9,6 +9,7 @@ Version:	%{version}
 Release:	%{release}
 Source0:	ftp://ftp.suse.com/pub/projects/deltarpm/%{name}-%{version}.tar.bz2
 Patch0:		deltarpm-2.2-mandir.patch
+Patch1:		deltarpm-3.4-rpm5.patch
 URL: http://www.novell.com/products/linuxpackages/suselinux/deltarpm.html
 License:	BSD
 Group:		System/Configuration/Packaging
@@ -27,6 +28,7 @@ Starting from version 2.2, there are also tools to handle ISO diffs.
 %prep
 %setup -q
 %patch0 -p1 -b .mandir
+%patch1 -p1 -b .rpm5
 
 %build
 %make prefix="%{_prefix}" rpmdumpheader="%{rpmdir}/rpmdumpheader" CFLAGS="%optflags -I%_includedir/rpm"
