@@ -1,6 +1,6 @@
 %define name	deltarpm
 %define version	3.4
-%define release	%mkrel 3
+%define release	%mkrel 4
 %define rpmdir	%{_prefix}/lib/rpm
 
 Summary:	Tools to create and apply deltarpms
@@ -8,7 +8,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0:	ftp://ftp.suse.com/pub/projects/deltarpm/%{name}-%{version}.tar.bz2
-Patch0:		deltarpm-2.2-mandir.patch
+Patch0:		deltarpm-3.4-mandir.patch
 Patch1:		deltarpm-3.4-rpm5.patch
 URL: http://www.novell.com/products/linuxpackages/suselinux/deltarpm.html
 License:	BSD
