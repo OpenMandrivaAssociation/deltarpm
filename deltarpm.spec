@@ -1,6 +1,6 @@
 %define name	deltarpm
 %define version	3.4
-%define release	%mkrel 4
+%define release	%mkrel 5
 %define rpmdir	%{_prefix}/lib/rpm
 
 Summary:	Tools to create and apply deltarpms
