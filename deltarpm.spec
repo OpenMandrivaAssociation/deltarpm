@@ -1,6 +1,6 @@
 %define name	deltarpm
 %define version	3.4
-%define release	%mkrel 7
+%define release	%mkrel 8
 %define rpmdir	%{_prefix}/lib/rpm
 
 Summary:	Tools to create and apply deltarpms
@@ -10,11 +10,11 @@ Release:	%{release}
 Source0:	ftp://ftp.suse.com/pub/projects/deltarpm/%{name}-%{version}.tar.bz2
 Patch0:		deltarpm-3.4-mandir.patch
 Patch1:		deltarpm-3.4-rpm5.patch
-URL: http://www.novell.com/products/linuxpackages/suselinux/deltarpm.html
+URL:		http://www.novell.com/products/linuxpackages/suselinux/deltarpm.html
 License:	BSD
 Group:		System/Configuration/Packaging
-BuildRequires:	rpm-devel, popt-devel, zlib-devel, bzip2-devel
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	rpm-devel popt-devel zlib-devel bzip2-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This package contains tools to create and apply deltarpms. A deltarpm
@@ -27,11 +27,13 @@ Starting from version 2.2, there are also tools to handle ISO diffs.
 
 %prep
 %setup -q
-%patch0 -p1 -b .mandir
-%patch1 -p1 -b .rpm5
+%patch0 -p1 -b .mandir~
+%patch1 -p1 -b .rpm5~
 
 %build
-%make prefix="%{_prefix}" rpmdumpheader="%{rpmdir}/rpmdumpheader" CFLAGS="%optflags -I%_includedir/rpm"
+# parallel build broken due to 'make' being called within Makefile, so build separately
+%make -C zlib* CFLAGS="%{optflags} -O3" LDFLAGS="%{ldflags}" libz.a
+%make prefix="%{_prefix}" rpmdumpheader="%{rpmdir}/rpmdumpheader" CFLAGS="%{optflags}" LDFLAGS="%{ldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
