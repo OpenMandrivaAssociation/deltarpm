@@ -8,6 +8,7 @@ Patch1:		deltarpm-3.4-rpm5.patch
 URL:		http://www.novell.com/products/linuxpackages/suselinux/deltarpm.html
 License:	BSD
 Group:		System/Configuration/Packaging
+BuildRequires:	rpm >= 1:5.3
 BuildRequires:	rpm-devel popt-devel zlib-devel bzip2-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
