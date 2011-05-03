@@ -1,7 +1,7 @@
 Summary:	Tools to create and apply deltarpms
 Name:		deltarpm
 Version:	3.4
-Release:	%mkrel 9
+Release:	%mkrel 10
 Source0:	ftp://ftp.suse.com/pub/projects/deltarpm/%{name}-%{version}.tar.bz2
 Patch0:		deltarpm-3.4-mandir.patch
 Patch1:		deltarpm-3.4-rpm5.patch
