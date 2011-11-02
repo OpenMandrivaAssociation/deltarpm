@@ -1,7 +1,7 @@
 Summary:	Tools to create and apply deltarpms
 Name:		deltarpm
 Version:	3.4
-Release:	%mkrel 10
+Release:	11
 Source0:	ftp://ftp.suse.com/pub/projects/deltarpm/%{name}-%{version}.tar.bz2
 Patch0:		deltarpm-3.4-mandir.patch
 Patch1:		deltarpm-3.4-rpm5.patch
@@ -32,16 +32,10 @@ Starting from version 2.2, there are also tools to handle ISO diffs.
 %make prefix="%{_prefix}" rpmdumpheader="%{_usrlibrpm}/rpmdumpheader" CFLAGS="%{optflags}" LDFLAGS="%{ldflags}"
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
 mkdir -p $RPM_BUILD_ROOT%{_usrlibrpm}
 %makeinstall_std prefix="%{_prefix}" rpmdumpheader="%{_usrlibrpm}/rpmdumpheader"
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
-%defattr(-,root,root)
 %doc README NEWS
 %{_bindir}/makedelta*
 %{_bindir}/applydelta*
