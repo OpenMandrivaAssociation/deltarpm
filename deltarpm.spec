@@ -32,7 +32,7 @@ Starting from version 2.2, there are also tools to handle ISO diffs.
 %make prefix="%{_prefix}" rpmdumpheader="%{_usrlibrpm}/rpmdumpheader" CFLAGS="%{optflags}" LDFLAGS="%{ldflags}"
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{_usrlibrpm}
+mkdir -p %{buildroot}%{_usrlibrpm}
 %makeinstall_std prefix="%{_prefix}" rpmdumpheader="%{_usrlibrpm}/rpmdumpheader"
 
 %files
