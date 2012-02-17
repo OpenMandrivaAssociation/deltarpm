@@ -1,7 +1,7 @@
 Summary:	Tools to create and apply deltarpms
 Name:		deltarpm
-Version:	3.4
-Release:	11
+Version:	3.5
+Release:	1
 Source0:	ftp://ftp.suse.com/pub/projects/deltarpm/%{name}-%{version}.tar.bz2
 Patch0:		deltarpm-3.4-mandir.patch
 Patch1:		deltarpm-3.4-rpm5.patch
@@ -9,8 +9,7 @@ URL:		http://www.novell.com/products/linuxpackages/suselinux/deltarpm.html
 License:	BSD
 Group:		System/Configuration/Packaging
 BuildRequires:	rpm >= 1:5.3
-BuildRequires:	rpm-devel popt-devel zlib-devel bzip2-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	rpm-devel popt-devel zlib-devel bzip2-devel lzma-devel
 
 %description
 This package contains tools to create and apply deltarpms. A deltarpm
@@ -23,7 +22,7 @@ Starting from version 2.2, there are also tools to handle ISO diffs.
 
 %prep
 %setup -q
-%patch0 -p1 -b .mandir~
+%patch0 -p0 -b .mandir~
 %patch1 -p1 -b .rpm5~
 
 %build
