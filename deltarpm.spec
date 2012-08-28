@@ -1,7 +1,7 @@
 Summary: Create deltas between rpms
 Name: deltarpm
 Version: 3.6
-Release: 0.11.20110223git
+Release: 0.12.20110223git
 License: BSD
 Group: System/Configuration/Packaging
 URL: http://gitorious.org/deltarpm/deltarpm
