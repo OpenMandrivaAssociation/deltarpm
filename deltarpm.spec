@@ -1,7 +1,7 @@
 Summary: Create deltas between rpms
 Name: deltarpm
 Version: 3.6
-Release: 0.12.20110223git
+Release: 0.1.20110223git
 License: BSD
 Group: System/Configuration/Packaging
 URL: http://gitorious.org/deltarpm/deltarpm
@@ -25,7 +25,7 @@ deltarpms can also work with installed rpms.
 
 %package -n drpmsync
 Summary: Sync a file tree with deltarpms
-Group: System Environment/Base
+Group: System/Configuration/Packaging
 Requires: deltarpm = %{version}-%{release}
 
 %description -n drpmsync
@@ -34,7 +34,7 @@ deltarpms.
 
 %package -n deltaiso
 Summary: Create deltas between isos containing rpms
-Group: System Environment/Base
+Group: System/Configuration/Packaging
 Requires: deltarpm = %{version}-%{release}
 
 %description -n deltaiso
@@ -43,7 +43,7 @@ a difference between an old and a new iso containing rpms.
 
 %package -n python-deltarpm
 Summary: Python bindings for deltarpm
-Group: System Environment/Base
+Group: System/Configuration/Packaging
 Requires: deltarpm = %{version}-%{release}
 
 %description -n python-deltarpm
