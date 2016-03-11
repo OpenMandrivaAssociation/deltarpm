@@ -6,8 +6,7 @@ License:	BSD
 Group:		System/Configuration/Packaging
 URL:		https://github.com/rpm-software-management/deltarpm
 Source0:	https://codeload.github.com/rpm-software-management/deltarpm/%{name}-%{version}.tar.gz
-Patch0:		deltarpm-3.4-mandir.patch
-Patch1:		deltarpm-3.4-rpm5.patch
+Patch0:		deltarpm-3.6.1-rpm5.patch
 BuildRequires:	rpm >= 1:5.3
 BuildRequires:	rpm-devel
 BuildRequires:	popt-devel
@@ -25,7 +24,7 @@ Starting from version 2.2, there are also tools to handle ISO diffs.
 
 %prep
 %setup -q
-#patch1 -p1 -b .rpm5~
+%apply_patches
 
 %build
 %setup_compile_flags
