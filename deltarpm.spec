@@ -25,27 +25,18 @@ Starting from version 2.2, there are also tools to handle ISO diffs.
 
 %prep
 %setup -q
-%patch1 -p1 -b .rpm5~
+#patch1 -p1 -b .rpm5~
 
 %build
-# parallel build broken due to 'make' being called within Makefile, so build separately
-%make -C zlib* CFLAGS="%{optflags} -O3" LDFLAGS="%{ldflags}" libz.a
-%make prefix="%{_prefix}" rpmdumpheader="%{_usrlibrpm}/rpmdumpheader" CFLAGS="%{optflags}" LDFLAGS="%{ldflags}"
+%setup_compile_flags
+%make rpmdumpheader="%{_libdir}/rpm/rpmdumpheader" prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir}
 
 %install
-mkdir -p %{buildroot}%{_usrlibrpm}
-%makeinstall_std prefix="%{_prefix}" rpmdumpheader="%{_usrlibrpm}/rpmdumpheader"
-
+mkdir -p %{buildroot}%{_libdir}/rpm
+%makeinstall_std rpmdumpheader="%{_libdir}/rpm/rpmdumpheader" DESTDIR=%{buildroot} prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir}
 
 %files
 %doc README NEWS
-%{_bindir}/makedelta*
-%{_bindir}/applydelta*
-%{_bindir}/drpmsync
-%{_bindir}/fragiso
-%{_bindir}/combinedeltarpm
-%{_mandir}/man8/makedelta*.8*
-%{_mandir}/man8/applydelta*.8*
-%{_mandir}/man8/drpmsync.8*
-%{_mandir}/man8/combinedeltarpm.8*
-%{_usrlibrpm}/rpmdumpheader
+%{_bindir}/*
+%{_mandir}/man8/*
+%{_libdir}/rpm/rpmdumpheader
