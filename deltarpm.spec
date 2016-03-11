@@ -25,7 +25,6 @@ Starting from version 2.2, there are also tools to handle ISO diffs.
 
 %prep
 %setup -q
-%patch0 -p1 -b .mandir~
 %patch1 -p1 -b .rpm5~
 
 %build
