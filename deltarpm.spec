@@ -28,7 +28,7 @@ Starting from version 2.2, there are also tools to handle ISO diffs.
 
 %build
 %setup_compile_flags
-%make rpmdumpheader="%{_libdir}/rpm/rpmdumpheader" prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir}
+%make rpmdumpheader="%{_libdir}/rpm/rpmdumpheader" prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir} -j1
 
 %install
 mkdir -p %{buildroot}%{_libdir}/rpm
