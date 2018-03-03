@@ -1,13 +1,16 @@
 Summary:	Tools to create and apply deltarpms
 Name:		deltarpm
 Version:	3.6.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		System/Configuration/Packaging
 URL:		https://github.com/rpm-software-management/deltarpm
-Source0:	https://codeload.github.com/rpm-software-management/deltarpm/%{name}-%{version}.tar.gz
-Patch0:		deltarpm-3.6.1-rpm5.patch
-BuildRequires:	rpm >= 1:5.3
+Source0:	https://github.com/rpm-software-management/deltarpm/archive/%{version}/%{name}-%{version}.tar.gz
+
+# Patches from Fedora
+Patch0:		0006-Add-fflush-s-so-output-can-be-watched-using-tail-f.patch
+
+BuildRequires:	rpm >= 2:4.14.0-0
 BuildRequires:	rpm-devel
 BuildRequires:	popt-devel
 BuildRequires:	zlib-devel
@@ -23,16 +26,15 @@ can also work with installed rpms.
 Starting from version 2.2, there are also tools to handle ISO diffs.
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 
 %build
 %setup_compile_flags
-%make rpmdumpheader="%{_libdir}/rpm/rpmdumpheader" prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir} -j1
+%make_build rpmdumpheader="%{_libdir}/rpm/rpmdumpheader" prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir}
 
 %install
 mkdir -p %{buildroot}%{_libdir}/rpm
-%makeinstall_std rpmdumpheader="%{_libdir}/rpm/rpmdumpheader" DESTDIR=%{buildroot} prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir}
+%make_install rpmdumpheader="%{_libdir}/rpm/rpmdumpheader" DESTDIR=%{buildroot} prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir}
 
 %files
 %doc README NEWS
