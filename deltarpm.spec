@@ -36,6 +36,9 @@ Starting from version 2.2, there are also tools to handle ISO diffs.
 mkdir -p %{buildroot}%{_libdir}/rpm
 %make_install rpmdumpheader="%{_libdir}/rpm/rpmdumpheader" DESTDIR=%{buildroot} prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir}
 
+# Drop drpmsync as we can't use it (missing perl deps)
+find %{buildroot} -name "drpmsync*" -delete
+
 %files
 %doc README NEWS
 %{_bindir}/*
