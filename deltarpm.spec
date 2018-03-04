@@ -18,7 +18,7 @@ Source0:	https://github.com/rpm-software-management/deltarpm/archive/%{version}/
 Patch0:		0006-Add-fflush-s-so-output-can-be-watched-using-tail-f.patch
 
 BuildRequires:	rpm >= 2:4.14.0-0
-BuildRequires:	pkgconfig(rpm)> = 4.14.0
+BuildRequires:	pkgconfig(rpm) >= 4.14.0
 BuildRequires:	pkgconfig(popt)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(bzip2)
