@@ -11,10 +11,10 @@ Source0:	https://github.com/rpm-software-management/deltarpm/archive/%{version}/
 Patch0:		0006-Add-fflush-s-so-output-can-be-watched-using-tail-f.patch
 
 BuildRequires:	rpm >= 2:4.14.0-0
-BuildRequires:	rpm-devel
-BuildRequires:	popt-devel
-BuildRequires:	zlib-devel
-BuildRequires:	bzip2-devel
+BuildRequires:	pkgconfig(rpm)> = 4.14.0
+BuildRequires:	pkgconfig(popt)
+BuildRequires:	pkgconfig(zlib)
+BuildRequires:	pkgconfig(bzip2)
 
 %description
 This package contains tools to create and apply deltarpms. A deltarpm
