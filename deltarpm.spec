@@ -22,6 +22,7 @@ BuildRequires:	pkgconfig(rpm) >= 4.14.0
 BuildRequires:	pkgconfig(popt)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(bzip2)
+BuildRequires:	pkgconfig(liblzma)
 
 %description
 This package contains tools to create and apply deltarpms. A deltarpm
