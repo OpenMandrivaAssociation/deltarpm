@@ -2,7 +2,7 @@
 Summary:	Tools to create and apply deltarpms
 Name:		deltarpm
 Version:	3.6.2
-Release:	2
+Release:	3
 License:	BSD
 Group:		System/Configuration/Packaging
 URL:		https://github.com/rpm-software-management/deltarpm
@@ -28,7 +28,7 @@ Starting from version 2.2, there are also tools to handle ISO diffs.
 %autosetup -p1
 
 %build
-%setup_compile_flags
+%set_build_flags
 %make_build CC=%{__cc} rpmdumpheader="%{_libdir}/rpm/rpmdumpheader" prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir}
 
 %install
@@ -41,5 +41,5 @@ find %{buildroot} -name "drpmsync*" -delete
 %files
 %doc README NEWS
 %{_bindir}/*
-%{_mandir}/man8/*
+%doc %{_mandir}/man8/*
 %{_libdir}/rpm/rpmdumpheader
