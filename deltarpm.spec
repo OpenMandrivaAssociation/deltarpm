@@ -3,7 +3,7 @@
 Summary:	Tools to create and apply deltarpms
 Name:		deltarpm
 Version:	3.6.3
-Release:	2
+Release:	3
 License:	BSD
 Group:		System/Configuration/Packaging
 URL:		https://github.com/rpm-software-management/deltarpm
