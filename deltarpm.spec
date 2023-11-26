@@ -1,14 +1,14 @@
-%global _empty_manifest_terminate_build 0
+%undefine _debugsource_packages
 
 Summary:	Tools to create and apply deltarpms
 Name:		deltarpm
 Version:	3.6.3
-Release:	3
+Release:	4
 License:	BSD
 Group:		System/Configuration/Packaging
 URL:		https://github.com/rpm-software-management/deltarpm
 Source0:	https://github.com/rpm-software-management/deltarpm/archive/%{version}/%{name}-%{version}.tar.gz
-BuildRequires:	rpm >= 2:4.14.0-0
+BuildRequires:	rpm >= 4.14.0
 BuildRequires:	pkgconfig(rpm) >= 4.14.0
 BuildRequires:	pkgconfig(popt)
 BuildRequires:	pkgconfig(zlib)
