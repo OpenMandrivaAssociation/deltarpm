@@ -2,7 +2,7 @@
 
 Summary:	Tools to create and apply deltarpms
 Name:		deltarpm
-Version:	3.6.4
+Version:	3.6.5
 Release:	1
 License:	BSD
 Group:		System/Configuration/Packaging
