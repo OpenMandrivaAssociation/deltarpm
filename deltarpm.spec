@@ -8,6 +8,7 @@ License:	BSD
 Group:		System/Configuration/Packaging
 URL:		https://github.com/rpm-software-management/deltarpm
 Source0:	https://github.com/rpm-software-management/deltarpm/archive/%{version}/%{name}-%{version}.tar.gz
+BuildRequires:	make
 BuildRequires:	rpm >= 4.14.0
 BuildRequires:	pkgconfig(rpm) >= 4.14.0
 BuildRequires:	pkgconfig(popt)
